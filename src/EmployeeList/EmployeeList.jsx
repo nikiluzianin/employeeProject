@@ -1,19 +1,41 @@
 import './EmployeeList.css'
+import { useState } from 'react'
 import EmployeeCard from '../EmployeeCard/EmployeeCard.jsx'
 import Header from '../Header/Header.jsx'
 import Footer from '../Footer/Footer.jsx'
+import personsData from "../data/persons";
+
 
 function EmployeeList() {
+    const [status, setStatus] = useState(false);
+
+    const clickHandler = () => {
+        if (!status) {
+            document.querySelector(".LogInButton").textContent = "Log out";
+            setStatus(true);
+        } else {
+            document.querySelector(".LogInButton").textContent = "Log in";
+            setStatus(false);
+        }
+    }
+
+
     return (
         <>
             <Header />
             <main>
+                <button className="LogInButton" onClick={clickHandler}>Log in</button>
+                {status && <div className="EmployeeCardSpace">
+                    {personsData.map((personData) => (
 
-                <div className="EmployeeCardSpace">
-                    <EmployeeCard fullName="Nikita L" role="Coder" department="IT" field1="something" field2="somneting else" />
-                    <EmployeeCard fullName="Not Nikita L" role="Not Coder" department="Not IT" field1="something different" field2="somneting else different" />
-                    <EmployeeCard fullName="bibi" role="pro" department="sports" field1="lala" field2="lala else" />
-                </div>
+                        <EmployeeCard key={personData.id} id={personData.id} name={personData.name} role={personData.role} department={personData.department} startDate={personData.startDate} location={personData.location} />
+
+                    ))}
+                </div>}
+                {!status && <div>
+                    <p>Log in please</p>
+                </div>}
+
             </main>
             <Footer />
 
