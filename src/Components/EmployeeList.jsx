@@ -1,8 +1,8 @@
-import './EmployeeList.css'
+import '../Styles/EmployeeList.css'
 import { useState } from 'react'
-import EmployeeCard from '../EmployeeCard/EmployeeCard.jsx'
-import personsData from "../../data/persons.js";
-import Button from '../Button.jsx';
+import EmployeeCard from './EmployeeCard.jsx'
+import personsData from "../data/persons.js";
+import Button from './Button.jsx';
 
 
 function EmployeeList() {

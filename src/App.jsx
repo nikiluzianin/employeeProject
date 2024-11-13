@@ -1,7 +1,7 @@
 import './App.css'
-import Header from './Components/Header/Header.jsx'
-import Footer from './Components/Footer/Footer.jsx'
-import EmployeeList from './Components/EmployeeList/EmployeeList.jsx'
+import Header from './Components/Header.jsx'
+import Footer from './Components/Footer.jsx'
+import EmployeeList from './Components/EmployeeList.jsx'
 
 function App() {
 

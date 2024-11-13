@@ -1,10 +1,12 @@
+import "../Styles/Button.css"
 
+function Button({ onClick, type = "default", text, role = "primary" }) {
 
-function Button({ onClick, type = "default", text }) {
+    const fullClassName = "Button " + role;
 
     return (
         <>
-            <button type={type} className="customButton" onClick={onClick} >{text}</button>
+            <button type={type} className={fullClassName} onClick={onClick} >{text}</button>
         </>
     );
 

@@ -17,6 +17,18 @@ body {
     height: 20rem;
 }
 
+.CardClass.department1 {
+    background-color: green;
+}
+
+.CardClass.department2 {
+    background-color: purple;
+}
+
+.CardClass.department3 {
+    background-color: violet;
+}
+
 .profilePicture {
     background-color: black;
     width: 150px;

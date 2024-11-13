@@ -1,8 +1,8 @@
-import './EmployeeCard.css'
+import '../Styles/EmployeeCard.css'
 import { useState } from 'react'
-import '../../assets/star.png'
-import '../../assets/birthday-cake.png'
-import Button from '../Button'
+import '../assets/star.png'
+import '../assets/birthday-cake.png'
+import Button from './Button'
 
 
 function EmployeeCard({ id, name, role, department, location, startDate }) {
@@ -12,6 +12,8 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
     const [roleType, setRoleType] = useState(role);
 
     const imageSrc = "https://robohash.org/" + id;
+
+    const cardClassName = "CardClass " + department.replace(/\s+/g, '');
 
     const timeDependancy = [false, false];
 
@@ -35,7 +37,7 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
 
     return (
         <>
-            <div className="CardClass">
+            <div className={cardClassName}>
                 <img className='profilePicture' src={imageSrc} />
                 <h2>{name}</h2>
 
@@ -46,7 +48,7 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
                 )}
                 <p> {location} </p>
                 <Button text={displayStar ? "Demote" : "Promote"} onClick={clickHandler} />
-                <Button text={isEditing ? "Save" : "Edit"} onClick={editHandler} />
+                <Button text={isEditing ? "Save" : "Edit"} onClick={editHandler} role="secondary" />
                 {timeDependancy[0] && (
                     <>
                         <p className='secondaryText'>{Math.floor(timeWorking)} year anniversarry</p>
