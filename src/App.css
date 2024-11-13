@@ -11,6 +11,10 @@
   gap: 5px;
 }
 
+body {
+  background-color: rgb(14, 14, 14);
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

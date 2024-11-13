@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.CardClass {
+    background-color: blue;
+    padding: 2rem;
+    position: relative;
+    border-radius: 6px;
+    text-align: left;
+    height: 20rem;
+}
+
+.profilePicture {
+    background-color: black;
+    width: 150px;
+    height: 100px;
+}
+
+.promoteImage {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 20px;
+    content: cover;
+}
+
+.anniversarryImage {
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    content: cover;
+}
+
+.secondaryText {
+    font-size: 0.8rem;
+}
+
+.buttonPromotion {
+    position: absolute;
+    bottom: 10px;
+
+}
