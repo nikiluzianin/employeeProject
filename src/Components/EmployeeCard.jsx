@@ -9,11 +9,16 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
     const [displayStar, setDisplayStar] = useState(false);
     const [timeWorking, setTimeWorking] = useState(((new Date() - new Date(startDate)) / (1000 * 60 * 60 * 24 * 365)));
     const [isEditing, setIsEditing] = useState(false);
-    const [roleType, setRoleType] = useState(role);
+    const [employeeData, setEmployeeData] = useState({
+        roleType: role,
+        departmentType: department,
+        locationType: location,
+    });
+
 
     const imageSrc = "https://robohash.org/" + id;
 
-    const cardClassName = "CardClass " + department.replace(/\s+/g, '');
+    const cardClassName = "CardClass " + employeeData.departmentType.replace(/\s+/g, '');
 
     const timeDependancy = [false, false];
 
@@ -31,7 +36,9 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
     }
 
     const handleChange = (e) => {
-        setRoleType(e.target.value);
+        const { name, value } = e.target;
+        //setRoleType(e.target.value);
+        setEmployeeData((prevSate) => ({ ...prevSate, [name]: value }));
         console.log(e);
     }
 
@@ -41,12 +48,22 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
                 <img className='profilePicture' src={imageSrc} />
                 <h2>{name}</h2>
 
+
+
                 {isEditing ? (
-                    <input type="text" value={roleType} onChange={handleChange} />
+                    <>
+                        <input name="roleType" type="text" value={employeeData.roleType} onChange={handleChange} />
+                        <input name="departmentType" type="text" value={employeeData.departmentType} onChange={handleChange} />
+                        <input name="locationType" type="text" value={employeeData.locationType} onChange={handleChange} />
+                    </>
                 ) : (
-                    <p> {roleType} at {department}</p>
+                    <>
+                        <p> {employeeData.roleType} </p>
+                        <p> {employeeData.departmentType}</p>
+                        <p> {employeeData.locationType} </p>
+                    </>
                 )}
-                <p> {location} </p>
+
                 <Button text={displayStar ? "Demote" : "Promote"} onClick={clickHandler} />
                 <Button text={isEditing ? "Save" : "Edit"} onClick={editHandler} role="secondary" />
                 {timeDependancy[0] && (

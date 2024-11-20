@@ -14,25 +14,26 @@ body {
     position: relative;
     border-radius: 6px;
     text-align: left;
-    height: 20rem;
+    height: 30rem;
+    width: 300px;
 }
 
-.CardClass.department1 {
+.CardClass.Engineering {
     background-color: green;
 }
 
-.CardClass.department2 {
+.CardClass.Design {
     background-color: purple;
 }
 
-.CardClass.department3 {
+.CardClass.Operations {
     background-color: violet;
 }
 
 .profilePicture {
     background-color: black;
-    width: 150px;
-    height: 100px;
+    width: 100%;
+
 }
 
 .promoteImage {

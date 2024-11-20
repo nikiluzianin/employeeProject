@@ -1,20 +1,24 @@
+import { RouterProvider } from 'react-router-dom'
 import './App.css'
-import Header from './Components/Header.jsx'
-import Footer from './Components/Footer.jsx'
-import EmployeeList from './Components/EmployeeList.jsx'
+import Home from './pages/Home.jsx'
+import { router } from "./routes/appRoute.jsx"
+
+
 
 function App() {
 
-
   return (
-    <>
-      <Header />
-      <div>
-        <EmployeeList />
-      </div>
-      <Footer />
-    </>
+    <RouterProvider router={router} />
   )
+
+
+  /*
+    return (
+      <>
+        <Home />
+  
+      </>
+    )*/
 }
 
 export default App

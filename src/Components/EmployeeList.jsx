@@ -6,7 +6,6 @@ import Button from './Button.jsx';
 
 
 function EmployeeList() {
-    const [status, setStatus] = useState(true);
 
 
     /*
@@ -16,25 +15,19 @@ function EmployeeList() {
     });
     const [departmentLeads, serDepartmentLeads] = useState(departmentLeadsTemp);*/
 
-    const toggleLogin = () => {
-        setStatus((prev) => !prev);
-    }
+
 
     return (
         <>
 
-            <main>
-                <Button text={status ? "Log out" : "Log in"} onClick={toggleLogin} />
-                {status && <div className="EmployeeCardSpace">
-                    {personsData.map((personData) => (
-                        <EmployeeCard key={personData.id} {...personData} />
-                    ))}
-                </div>}
-                {!status && <div>
-                    <p>Log in please</p>
-                </div>}
 
-            </main>
+            <div className="EmployeeCardSpace">
+                {personsData.map((personData) => (
+                    <EmployeeCard key={personData.id} {...personData} />
+                ))}
+            </div>
+
+
 
 
         </>
