@@ -1,12 +1,18 @@
 import { Outlet } from "react-router-dom";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { useState } from "react";
 
-const Root = () => {
+const Root = (loggedIn) => {
+
+
+
     return (
         <div>
-            <Header />
-            <Outlet />
+            <Header loggedIn={loggedIn} />
+            <main>
+                <Outlet />
+            </main>
             <Footer />
         </div>
     );

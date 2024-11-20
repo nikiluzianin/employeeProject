@@ -1,29 +1,40 @@
-import Header from '../Components/Header.jsx'
-import Footer from '../Components/Footer.jsx'
-import EmployeeList from '../Components/EmployeeList.jsx'
+import Header from '../components/Header.jsx'
+import Footer from '../components/Footer.jsx'
+import EmployeeList from '../components/EmployeeList.jsx'
 import { useState } from 'react'
+import Button from '../components/Button.jsx'
+import Login from './Login.jsx'
 
-function Home() {
-    const [status, setStatus] = useState(true);
+import { Link, Navigate } from 'react-router-dom'
 
-    const toggleLogin = () => {
-        setStatus((prev) => !prev);
-    }
+function Home({ LogInAction, loggedIn }) {
 
 
     return (
         <>
-            <Header status={status} onClickLogin={toggleLogin} />
-            <main>
-                {status && <div className='ListSpace'>
-                    <EmployeeList />
-                </div>}
-                {!status && <div>
-                    <p>Log in please</p>
-                </div>}
-            </main>
+            <div className='ListSpace'>
+                <EmployeeList />
+            </div>
         </>
     )
+    // <p><Login LogInAction={LogInAction} /></p>
+
+    /*return (
+        <div className='ListSpace'>
+            <EmployeeList />
+        </div>
+
+        {loggedIn && <div className='ListSpace'>
+                <EmployeeList />
+            </div>}
+            {!loggedIn && <div>
+                <Navigate to="/login" />
+            </div>}
+
+
+
+    )*/
+
 }
 
 export default Home
