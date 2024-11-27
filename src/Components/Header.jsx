@@ -5,9 +5,6 @@ import { Link, NavLink } from 'react-router-dom'
 
 function Header({ loggedIn }) {
 
-
-    //     <Link to="/new"><Button text="Add new" /> </Link>
-    //             <Button text={status ? "Log out" : "Log in"} onClick={onClickLogin} />
     return (
         <header>
             <Link to='/' ><div className="logo">LOGO</div></Link>
@@ -33,6 +30,8 @@ function Header({ loggedIn }) {
                     About
                 </NavLink>
             </div>
+
+
 
         </header>
     );

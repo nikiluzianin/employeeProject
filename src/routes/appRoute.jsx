@@ -5,7 +5,7 @@ import About from "../pages/About";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Form from "../pages/Form";
-import EmployeeList from "../components/EmployeeList";
+import SinglePage from "../components/SinglePage";
 
 export const router = (loggedIn, LogInAction) => {
 
@@ -18,6 +18,7 @@ export const router = (loggedIn, LogInAction) => {
             { path: '/employees', element: <Home /> },
             { path: '/new', element: <Form /> },
             { path: '/about', element: <About /> },
+            { path: "/profile/:id", element: <SinglePage /> }
             // { path: '/login', element: <Login LogInAction={LogInAction} /> },
         ],
         element: loggedIn ? < Root loggedIn={loggedIn} /> : <Navigate to="/login" />,

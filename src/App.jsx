@@ -7,7 +7,8 @@ import { useState } from 'react'
 
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
+  // manages if user is logged in or not
 
 
   const toggleLoggedIn = () => {
