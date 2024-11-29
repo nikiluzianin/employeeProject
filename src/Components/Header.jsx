@@ -1,5 +1,4 @@
 import '../Styles/Header.css'
-import Button from './Button';
 import { Link, NavLink } from 'react-router-dom'
 
 
@@ -12,7 +11,7 @@ function Header({ loggedIn }) {
             <div className="navigation">
 
                 <NavLink
-                    to='/employees'
+                    to='/'
                 >
                     Employees
                 </NavLink>

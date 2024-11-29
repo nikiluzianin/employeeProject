@@ -15,11 +15,9 @@ export const router = (loggedIn, LogInAction) => {
         //element: < Root loggedIn={loggedIn} />,
         children: [
             { path: '/', element: <Home loggedIn={loggedIn} LogInAction={LogInAction} /> },
-            { path: '/employees', element: <Home /> },
             { path: '/new', element: <Form /> },
             { path: '/about', element: <About /> },
             { path: "/profile/:id", element: <SinglePage /> }
-            // { path: '/login', element: <Login LogInAction={LogInAction} /> },
         ],
         element: loggedIn ? < Root loggedIn={loggedIn} /> : <Navigate to="/login" />,
         errorElement: <ErrorPage />,

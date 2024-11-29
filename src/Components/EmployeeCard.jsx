@@ -3,9 +3,10 @@ import { useState } from 'react'
 import '../assets/star.png'
 import '../assets/birthday-cake.png'
 import Button from './Button'
+import axios from 'axios'
 
 
-function EmployeeCard({ id, name, role, department, location, startDate }) {
+function EmployeeCard({ id, name, role, department, location, startDate, onClick }) {
     const [displayStar, setDisplayStar] = useState(false);
     const [timeWorking, setTimeWorking] = useState(((new Date() - new Date(startDate)) / (1000 * 60 * 60 * 24 * 365)));
     const [isEditing, setIsEditing] = useState(false);
@@ -14,6 +15,8 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
         departmentType: department,
         locationType: location,
     });
+
+
 
 
     const imageSrc = "https://robohash.org/" + id;
@@ -33,6 +36,16 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
 
     const editHandler = () => {
         setIsEditing((prev) => !prev);
+        axios.put(`http://localhost:3002/personsData/${id}`, {
+            name: name,
+            role: employeeData.roleType,
+            department: employeeData.departmentType,
+            location: employeeData.locationType,
+            startDate: startDate
+        }).
+            then((response) => {
+                console.log(response.data);
+            })
     }
 
     const handleChange = (e) => {
@@ -66,6 +79,8 @@ function EmployeeCard({ id, name, role, department, location, startDate }) {
 
                 <Button text={displayStar ? "Demote" : "Promote"} onClick={clickHandler} />
                 <Button text={isEditing ? "Save" : "Edit"} onClick={editHandler} role="secondary" />
+                <Button text="More" onClick={onClick} />
+
                 {timeDependancy[0] && (
                     <>
                         <p className='secondaryText'>{Math.floor(timeWorking)} year anniversarry</p>

@@ -1,4 +1,15 @@
 form {
     display: flex;
     flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    width: 250px;
 }

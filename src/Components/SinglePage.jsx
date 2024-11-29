@@ -1,11 +1,22 @@
 import { useParams, useNavigate } from "react-router-dom"
 import Button from "./Button"
-import personsData from "../data/persons"
+import axios from 'axios';
+import { useState, useEffect } from "react";
+
 
 function SinglePage() {
+    const [selectedPersonData, setSelectedPersonData] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
     const navigate = useNavigate();
-    const selectedPersonData = personsData.find(personData => personData.id == (+id));
+
+    useEffect(() => {
+        axios.get(`http://localhost:3002/personsData/${id}`).
+            then((response) => {
+                setSelectedPersonData(response.data);
+                setIsLoading(false);
+            })
+    }, []);
 
     return (
         <div className="singlePage">

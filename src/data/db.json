@@ -1,0 +1,92 @@
+{
+  "personsData": [
+    {
+      "name": "John Smith",
+      "role": "Software Engineer",
+      "department": "Engineering",
+      "location": "New York",
+      "startDate": "2019-08-01",
+      "id": "0"
+    },
+    {
+      "name": "Jane Doe",
+      "role": "Product Manager",
+      "department": "Engineering",
+      "location": "San Francisco",
+      "startDate": "2020-03-01",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Michael Johnson",
+      "role": "Data Scientist",
+      "department": "Engineering",
+      "startDate": "2014-11-01",
+      "location": "Chicago"
+    },
+    {
+      "id": "3",
+      "name": "Emily Davis",
+      "role": "UX/UI Designer",
+      "department": "Design",
+      "startDate": "2017-02-01",
+      "location": "Los Angeles"
+    },
+    {
+      "id": "4",
+      "name": "David Brown",
+      "role": "Marketing Specialist",
+      "department": "Design",
+      "startDate": "2021-06-01",
+      "location": "New York"
+    },
+    {
+      "id": "5",
+      "name": "Sarah Wilson",
+      "role": "HR Manager",
+      "department": "Design",
+      "startDate": "2009-11-01",
+      "location": "San Francisco"
+    },
+    {
+      "id": "6",
+      "name": "James Taylor",
+      "role": "DevOps Engineer",
+      "department": "Operations",
+      "startDate": "2011-09-01",
+      "location": "Chicago"
+    },
+    {
+      "id": "7",
+      "name": "Olivia Martinez",
+      "role": "Sales Associate",
+      "department": "Operations",
+      "startDate": "2024-07-01",
+      "location": "Los Angeles"
+    },
+    {
+      "id": "8",
+      "name": "Christopher Lee",
+      "role": "Business Analyst",
+      "department": "Operations",
+      "startDate": "2016-05-01",
+      "location": "New York"
+    },
+    {
+      "id": "9",
+      "name": "Sophia Gonzalez",
+      "role": "Customer Support Representative",
+      "department": "Operations",
+      "startDate": "2022-10-01",
+      "location": "San Francisco"
+    },
+    {
+      "name": "Margit",
+      "role": "Teacher / bad person",
+      "department": "BCH",
+      "location": "Helsinki",
+      "startDate": "2024-11-27T11:40:31.617Z",
+      "id": "5cc5"
+    }
+  ]
+}
