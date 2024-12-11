@@ -3,18 +3,24 @@ import { useState } from 'react'
 import '../assets/star.png'
 import '../assets/birthday-cake.png'
 import Button from './Button'
-import axios from 'axios'
+import useAxiosRequest from '../services/useAxios'
+import useEmployeeStatus from '../hooks/useEmployeeStatus'
 
 
 function EmployeeCard({ id, name, role, department, location, startDate, onClick }) {
     const [displayStar, setDisplayStar] = useState(false);
-    const [timeWorking, setTimeWorking] = useState(((new Date() - new Date(startDate)) / (1000 * 60 * 60 * 24 * 365)));
+    // const [timeWorking, setTimeWorking] = useState(((new Date() - new Date(startDate)) / (1000 * 60 * 60 * 24 * 365)));
     const [isEditing, setIsEditing] = useState(false);
     const [employeeData, setEmployeeData] = useState({
         roleType: role,
         departmentType: department,
         locationType: location,
     });
+    const {
+        isProbation,
+        isAnniversary,
+        timeWorking
+    } = useEmployeeStatus(startDate);
 
 
 
@@ -23,29 +29,26 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
 
     const cardClassName = "CardClass " + employeeData.departmentType.replace(/\s+/g, '');
 
-    const timeDependancy = [false, false];
-
-    if (timeWorking <= 0.5) (timeDependancy[1] = true)
-    else (Math.floor(timeWorking) % 5 == 0) && (timeDependancy[0] = true);
-
     const clickHandler = () => {
         setDisplayStar((prev) => !prev);
         console.log("clicked " + id);
 
     }
 
+    const {
+        error,
+        update
+    } = useAxiosRequest("http://localhost:3002")
+
     const editHandler = () => {
         setIsEditing((prev) => !prev);
-        axios.put(`http://localhost:3002/personsData/${id}`, {
+        update(`personsData/${id}`, {
             name: name,
             role: employeeData.roleType,
             department: employeeData.departmentType,
             location: employeeData.locationType,
             startDate: startDate
-        }).
-            then((response) => {
-                console.log(response.data);
-            })
+        })
     }
 
     const handleChange = (e) => {
@@ -81,13 +84,13 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
                 <Button text={isEditing ? "Save" : "Edit"} onClick={editHandler} role="secondary" />
                 <Button text="More" onClick={onClick} />
 
-                {timeDependancy[0] && (
+                {isAnniversary && (
                     <>
                         <p className='secondaryText'>{Math.floor(timeWorking)} year anniversarry</p>
                         <img className="anniversarryImage" src="src/assets/birthday-cake.png" />
                     </>
                 )}
-                {timeDependancy[1] && <p className='secondaryText'>Schedule probation review</p>}
+                {isProbation && <p className='secondaryText'>Schedule probation review</p>}
                 {displayStar ? <img className="promoteImage" src="src/assets/star.png" /> : <p></p>}
             </div>
         </>

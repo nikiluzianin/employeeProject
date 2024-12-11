@@ -1,7 +1,7 @@
 import Button from "../components/Button";
 import "../styles/Form.css"
 import { useState } from "react";
-import axios from 'axios';
+import useAxiosRequest from "../services/useAxios";
 
 
 const Form = () => {
@@ -17,19 +17,21 @@ const Form = () => {
         setNewEmployeeData((prevSate) => ({ ...prevSate, [name]: value }));
     }
 
+    const {
+        create,
+        error
+    } = useAxiosRequest("http://localhost:3002");
+
     const handleClick = () => {
-        console.log(newEmployeeData);
-        axios.post("http://localhost:3002/personsData", {
+        create("personsData", {
             name: newEmployeeData.name,
             role: newEmployeeData.roleType,
             department: newEmployeeData.departmentType,
             startDate: new Date(),
             location: newEmployeeData.locationType,
 
-        })
-        console.log(new Date());
+        });
     }
-
 
     return (
         <>
