@@ -1,4 +1,4 @@
-import "../Styles/Button.css"
+import "./Button.css"
 
 function Button({ onClick, type = "default", text, role = "primary" }) {
 

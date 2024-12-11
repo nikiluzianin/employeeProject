@@ -1,11 +1,7 @@
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.jsx'
-import EmployeeList from '../components/EmployeeList.jsx'
-import { useState } from 'react'
-import Button from '../components/Button.jsx'
-import Login from './Login.jsx'
 
-import { Link, Navigate } from 'react-router-dom'
+import EmployeeList from '../../components/EmployeeList/EmployeeList.jsx'
+// import Login from './Login.jsx'
+
 
 function Home({ LogInAction, loggedIn }) {
 

@@ -1,4 +1,4 @@
-import '../Styles/Header.css'
+import './Header.css'
 import { Link, NavLink } from 'react-router-dom'
 
 

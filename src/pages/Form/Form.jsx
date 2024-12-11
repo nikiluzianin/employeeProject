@@ -1,7 +1,7 @@
-import Button from "../components/Button";
-import "../styles/Form.css"
+import Button from "../../components/Button/Button";
+import "./Form.css"
 import { useState } from "react";
-import useAxiosRequest from "../services/useAxios";
+import useAxiosRequest from "../../services/useAxios";
 
 
 const Form = () => {

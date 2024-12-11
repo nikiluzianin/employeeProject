@@ -1,10 +1,10 @@
-import '../Styles/EmployeeCard.css'
+import './EmployeeCard.css'
 import { useState } from 'react'
-import '../assets/star.png'
-import '../assets/birthday-cake.png'
-import Button from './Button'
-import useAxiosRequest from '../services/useAxios'
-import useEmployeeStatus from '../hooks/useEmployeeStatus'
+import '../../assets/star.png'
+import '../../assets/birthday-cake.png'
+import Button from '../Button/Button'
+import useAxiosRequest from '../../services/useAxios'
+import useEmployeeStatus from '../../hooks/useEmployeeStatus'
 
 
 function EmployeeCard({ id, name, role, department, location, startDate, onClick }) {

@@ -1,11 +1,11 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Root from "../pages/Root";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import ErrorPage from "../pages/ErrorPage";
-import Login from "../pages/Login";
-import Form from "../pages/Form";
-import SinglePage from "../components/SinglePage";
+import Home from "../pages/Home/Home";
+import About from "../pages/About/About";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Login from "../pages/Login/Login";
+import Form from "../pages/Form/Form";
+import SinglePage from "../pages/SinglePage/SinglePage";
 
 export const router = (loggedIn, LogInAction) => {
 

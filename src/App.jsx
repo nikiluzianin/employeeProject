@@ -1,6 +1,5 @@
 import { RouterProvider, useNavigate } from 'react-router-dom'
-import './App.css'
-import Home from './pages/Home.jsx'
+import Home from './pages/Home/Home.jsx'
 import { router } from "./routes/appRoute.jsx"
 import { useState } from 'react'
 

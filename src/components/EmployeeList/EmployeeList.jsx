@@ -1,8 +1,8 @@
-import '../Styles/EmployeeList.css'
+import './EmployeeList.css'
 import { useState, useEffect, useDebugValue } from 'react'
-import EmployeeCard from './EmployeeCard.jsx'
+import EmployeeCard from '../EmployeeCard/EmployeeCard.jsx'
 import { useNavigate } from 'react-router-dom';
-import useAxiosRequest from '../services/useAxios.js';
+import useAxiosRequest from '../../services/useAxios.js';
 
 
 
