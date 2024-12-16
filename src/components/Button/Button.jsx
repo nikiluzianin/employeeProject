@@ -1,12 +1,18 @@
-import "./Button.css"
+import styles from "./Button.module.css"
 
 function Button({ onClick, type = "default", text, role = "primary" }) {
 
-    const fullClassName = "Button " + role;
+    const fullClassName = "btn";
+
+    /*return (
+        <>
+            <button type={type} className={`${styles[fullClassName]} ${styles[role]}`} onClick={onClick} >{text}</button >
+        </>
+    );*/
 
     return (
         <>
-            <button type={type} className={fullClassName} onClick={onClick} >{text}</button>
+            <button type={type} className={styles[fullClassName] + " " + styles[role]} onClick={onClick} >{text}</button >
         </>
     );
 

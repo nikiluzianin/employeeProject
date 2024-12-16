@@ -1,4 +1,4 @@
-import './EmployeeCard.css'
+import styles from './EmployeeCard.module.css'
 import { useState } from 'react'
 import '../../assets/star.png'
 import '../../assets/birthday-cake.png'
@@ -9,7 +9,6 @@ import useEmployeeStatus from '../../hooks/useEmployeeStatus'
 
 function EmployeeCard({ id, name, role, department, location, startDate, onClick }) {
     const [displayStar, setDisplayStar] = useState(false);
-    // const [timeWorking, setTimeWorking] = useState(((new Date() - new Date(startDate)) / (1000 * 60 * 60 * 24 * 365)));
     const [isEditing, setIsEditing] = useState(false);
     const [employeeData, setEmployeeData] = useState({
         roleType: role,
@@ -27,7 +26,9 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
 
     const imageSrc = "https://robohash.org/" + id;
 
-    const cardClassName = "CardClass " + employeeData.departmentType.replace(/\s+/g, '');
+    // const cardClassName = "CardClass " + employeeData.departmentType.replace(/\s+/g, '');
+    const cardClassName = styles.CardClass + " " + styles[employeeData.departmentType.replace(/\s+/g, '')];
+
 
     const clickHandler = () => {
         setDisplayStar((prev) => !prev);
@@ -61,7 +62,7 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
     return (
         <>
             <div className={cardClassName}>
-                <img className='profilePicture' src={imageSrc} />
+                <img className={styles.profilePicture} src={imageSrc} />
                 <h2>{name}</h2>
 
 
@@ -87,11 +88,11 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
                 {isAnniversary && (
                     <>
                         <p className='secondaryText'>{Math.floor(timeWorking)} year anniversarry</p>
-                        <img className="anniversarryImage" src="src/assets/birthday-cake.png" />
+                        <img className={styles.anniversarryImage} src="src/assets/birthday-cake.png" />
                     </>
                 )}
-                {isProbation && <p className='secondaryText'>Schedule probation review</p>}
-                {displayStar ? <img className="promoteImage" src="src/assets/star.png" /> : <p></p>}
+                {isProbation && <p className={styles.secondaryText}>Schedule probation review</p>}
+                {displayStar ? <img className={styles.promoteImage} src="src/assets/star.png" /> : <p></p>}
             </div>
         </>
     )

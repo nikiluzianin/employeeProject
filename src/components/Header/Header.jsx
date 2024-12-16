@@ -1,14 +1,14 @@
-import './Header.css'
+import styles from './Header.module.css'
 import { Link, NavLink } from 'react-router-dom'
 
 
 function Header({ loggedIn }) {
 
     return (
-        <header>
-            <Link to='/' ><div className="logo">LOGO</div></Link>
+        <header className={styles.header}>
+            <Link to='/' ><div className={styles.logo}>LOGO</div></Link>
 
-            <div className="navigation">
+            <div className={styles.navigation}>
 
                 <NavLink
                     to='/'

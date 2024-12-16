@@ -1,4 +1,4 @@
-import './EmployeeList.css'
+import styles from './EmployeeList.module.css'
 import { useState, useEffect, useDebugValue } from 'react'
 import EmployeeCard from '../EmployeeCard/EmployeeCard.jsx'
 import { useNavigate } from 'react-router-dom';
@@ -26,7 +26,7 @@ function EmployeeList() {
 
     return (
         <>
-            <div className="EmployeeCardSpace">
+            <div className={styles.EmployeeCardSpace}>
                 {isLoading && <p>Loading...</p>}
                 {error && <p>Error...</p>}
 
@@ -43,7 +43,7 @@ function EmployeeList() {
 
 
 
-            </div>
+            </div >
         </>
     )
 }

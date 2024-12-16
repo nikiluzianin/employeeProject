@@ -95,6 +95,14 @@
       "department": "adsasd",
       "startDate": "2024-12-11T11:03:39.279Z",
       "location": "asdadsdas"
+    },
+    {
+      "id": "3179",
+      "name": "Athena",
+      "role": "Spartali",
+      "department": "Cafe",
+      "startDate": "2024-12-11T12:57:30.695Z",
+      "location": "Sweden"
     }
   ]
 }

@@ -1,31 +1,33 @@
 import { useParams, useNavigate } from "react-router-dom"
 import Button from "../../components/Button/Button"
-import axios from 'axios';
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import useAxiosRequest from "../../services/useAxios";
+import styles from "./SinglePage.module.css"
 
 
 function SinglePage() {
-    const [selectedPersonData, setSelectedPersonData] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
     const { id } = useParams();
     const navigate = useNavigate();
 
+    const {
+        data: selectedPersonData,
+        isLoading,
+        error,
+        read,
+    } = useAxiosRequest(`http://localhost:3002`);
+
     useEffect(() => {
-        axios.get(`http://localhost:3002/personsData/${id}`).
-            then((response) => {
-                setSelectedPersonData(response.data);
-                setIsLoading(false);
-            })
+        read(`personsData/${id}`);
     }, []);
 
     return (
-        <div className="singlePage">
-            <div className="personalCard">
-                <div className="imageSide"></div>
-                <div className="infoSide">
-                    <h2>page for {selectedPersonData.name}</h2>
-                    <p>Position: {selectedPersonData.role}</p>
-                    <p>Department: {selectedPersonData.location}</p>
+        <div className={styles.singlePage}>
+            <div className={styles.personalCard}>
+                <div className={styles.imageSide}></div>
+                <div className={styles.infoSide}>
+                    <h2>page for {(selectedPersonData || []).name}</h2>
+                    <p>Position: {(selectedPersonData || []).role}</p>
+                    <p>Department: {(selectedPersonData || []).location}</p>
                 </div>
             </div>
             <Button onClick={() => navigate(-1)} text="Back" />

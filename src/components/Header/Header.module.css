@@ -1,18 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
+.header {
     margin: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
     display: flex;
     align-items: center;
 }
