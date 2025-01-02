@@ -10,6 +10,7 @@ const Form = () => {
         roleType: "",
         departmentType: "",
         locationType: "",
+        salary: "",
     });
 
     const handleChange = (e) => {
@@ -29,8 +30,10 @@ const Form = () => {
             department: newEmployeeData.departmentType,
             startDate: new Date(),
             location: newEmployeeData.locationType,
+            salary: newEmployeeData.salary
 
         });
+        // add notification that a person is added and empty the fields
     }
 
     return (
@@ -51,6 +54,10 @@ const Form = () => {
                 <div className={styles.line}>
                     <label name="name">Location:</label>
                     <input name="locationType" type="text" placeholder="Input location" onChange={handleChange} />
+                </div>
+                <div className={styles.line}>
+                    <label name="name">Salary:</label>
+                    <input name="name" type="text" placeholder="Input salary" onChange={handleChange} />
                 </div>
                 <Button type="button" text="Save" onClick={handleClick} />
 
