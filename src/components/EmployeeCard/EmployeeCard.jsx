@@ -1,7 +1,7 @@
 import styles from './EmployeeCard.module.css'
 import { useState } from 'react'
-import '../../assets/star.png'
-import '../../assets/birthday-cake.png'
+import '/star.png'
+import '/birthday-cake.png'
 import Button from '../Button/Button'
 import useAxiosRequest from '../../services/useAxios'
 import useEmployeeStatus from '../../hooks/useEmployeeStatus'
@@ -89,11 +89,11 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
                 {isAnniversary && (
                     <>
                         <p className={styles.secondaryText}>{Math.floor(timeWorking)} year anniversarry</p>
-                        <img className={styles.anniversarryImage} src="dist/assets/birthday-cake-UJEH_DQs.png" />
+                        <img className={styles.anniversarryImage} src="/birthday-cake.png" />
                     </>
                 )}
                 {isProbation && <p className={styles.secondaryText}>Schedule probation review</p>}
-                {displayStar ? <img className={styles.promoteImage} src="dist/assets/star-BuQvW_pG.png" /> : <p></p>}
+                {displayStar ? <img className={styles.promoteImage} src="/star.png" /> : <p></p>}
             </div>
         </>
     )
