@@ -38,6 +38,7 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
         update
     } = useAxiosRequest("http://localhost:3002")
 
+
     const editHandler = () => {
         setIsEditing((prev) => !prev);
         update(`personsData/${id}`, {
@@ -88,11 +89,11 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
                 {isAnniversary && (
                     <>
                         <p className={styles.secondaryText}>{Math.floor(timeWorking)} year anniversarry</p>
-                        <img className={styles.anniversarryImage} src="src/assets/birthday-cake-UJEH_DQs.png" />
+                        <img className={styles.anniversarryImage} src="dist/assets/birthday-cake-UJEH_DQs.png" />
                     </>
                 )}
                 {isProbation && <p className={styles.secondaryText}>Schedule probation review</p>}
-                {displayStar ? <img className={styles.promoteImage} src="src/assets/star.png" /> : <p></p>}
+                {displayStar ? <img className={styles.promoteImage} src="dist/assets/star-BuQvW_pG.png" /> : <p></p>}
             </div>
         </>
     )

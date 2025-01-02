@@ -16,6 +16,7 @@ function EmployeeList() {
         read,
     } = useAxiosRequest("http://localhost:3002");
 
+
     useEffect(() => {
         read("personsData");
     }, []);
