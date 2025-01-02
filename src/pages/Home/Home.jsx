@@ -3,7 +3,7 @@ import EmployeeList from '../../components/EmployeeList/EmployeeList.jsx'
 // import Login from './Login.jsx'
 
 
-function Home({ LogInAction, loggedIn }) {
+function Home() {
 
 
     return (
@@ -13,23 +13,6 @@ function Home({ LogInAction, loggedIn }) {
             </div>
         </>
     )
-    // <p><Login LogInAction={LogInAction} /></p>
-
-    /*return (
-        <div className='ListSpace'>
-            <EmployeeList />
-        </div>
-
-        {loggedIn && <div className='ListSpace'>
-                <EmployeeList />
-            </div>}
-            {!loggedIn && <div>
-                <Navigate to="/login" />
-            </div>}
-
-
-
-    )*/
 
 }
 

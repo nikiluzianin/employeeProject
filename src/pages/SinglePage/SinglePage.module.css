@@ -1,0 +1,17 @@
+.singlePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personalCard {
+    display: flex;
+    gap: 2vw;
+    margin-bottom: 30px;
+}
+
+.infoSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

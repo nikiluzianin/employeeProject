@@ -6,7 +6,7 @@ function Header({ loggedIn }) {
 
     return (
         <header className={styles.header}>
-            <Link to='/' ><div className={styles.logo}>LOGO</div></Link>
+            <Link to='/' ><div className={styles.logo}>AMAZING LOGO</div></Link>
 
             <div className={styles.navigation}>
 

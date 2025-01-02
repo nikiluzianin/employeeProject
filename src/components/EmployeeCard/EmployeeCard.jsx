@@ -26,14 +26,11 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
 
     const imageSrc = "https://robohash.org/" + id;
 
-    // const cardClassName = "CardClass " + employeeData.departmentType.replace(/\s+/g, '');
     const cardClassName = styles.CardClass + " " + styles[employeeData.departmentType.replace(/\s+/g, '')];
 
 
     const clickHandler = () => {
         setDisplayStar((prev) => !prev);
-        console.log("clicked " + id);
-
     }
 
     const {
@@ -49,6 +46,7 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
             department: employeeData.departmentType,
             location: employeeData.locationType,
             startDate: startDate
+
         })
     }
 
@@ -63,7 +61,7 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
         <>
             <div className={cardClassName}>
                 <img className={styles.profilePicture} src={imageSrc} />
-                <h2>{name}</h2>
+                <h3>{name}</h3>
 
 
 
@@ -72,22 +70,24 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
                         <input name="roleType" type="text" value={employeeData.roleType} onChange={handleChange} />
                         <input name="departmentType" type="text" value={employeeData.departmentType} onChange={handleChange} />
                         <input name="locationType" type="text" value={employeeData.locationType} onChange={handleChange} />
+                        <Button text={displayStar ? "Demote" : "Promote"} onClick={clickHandler} id="displayStarButton" />
+                        <Button text={"Save"} onClick={editHandler} />
+                        <Button text="More" onClick={onClick} id="moreButton" isButtonDisabled={true} role="secondary" />
                     </>
                 ) : (
                     <>
                         <p> {employeeData.roleType} </p>
                         <p> {employeeData.departmentType}</p>
                         <p> {employeeData.locationType} </p>
+                        <Button text={displayStar ? "Demote" : "Promote"} onClick={clickHandler} id="displayStarButton" />
+                        <Button text={"Edit"} onClick={editHandler} />
+                        <Button text="More" onClick={onClick} id="moreButton" isButtonDisabled={false} role="secondary" />
                     </>
                 )}
 
-                <Button text={displayStar ? "Demote" : "Promote"} onClick={clickHandler} />
-                <Button text={isEditing ? "Save" : "Edit"} onClick={editHandler} role="secondary" />
-                <Button text="More" onClick={onClick} />
-
                 {isAnniversary && (
                     <>
-                        <p className='secondaryText'>{Math.floor(timeWorking)} year anniversarry</p>
+                        <p className={styles.secondaryText}>{Math.floor(timeWorking)} year anniversarry</p>
                         <img className={styles.anniversarryImage} src="src/assets/birthday-cake.png" />
                     </>
                 )}

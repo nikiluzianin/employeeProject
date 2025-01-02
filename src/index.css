@@ -10,8 +10,10 @@
   font-weight: 300;
 
   color: rgba(255, 255, 255, 0.87);
-  background-color: rgb(4, 0, 15);
+
   --link-color: rgba(255, 255, 255, 0.87);
+  --background-color: rgb(4, 0, 15);
+  background-color: var(--background-color);
 }
 
 a {
@@ -28,8 +30,6 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
-  background-color: var(background-color);
 }
 
 h1 {
@@ -37,10 +37,19 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
 main {
   width: 100%;
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: 85vh;
   margin: 0 auto;
   margin-bottom: 30px;
 }

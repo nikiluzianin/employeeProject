@@ -39,10 +39,6 @@ function EmployeeList() {
                     return <EmployeeCard key={personData.id} {...personData} onClick={() => goToProfile(personData.id)} />
                 })*/}
 
-
-
-
-
             </div >
         </>
     )

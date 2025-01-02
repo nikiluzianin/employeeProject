@@ -14,7 +14,8 @@ export const router = (loggedIn, LogInAction) => {
         path: '/',
         //element: < Root loggedIn={loggedIn} />,
         children: [
-            { path: '/', element: <Home loggedIn={loggedIn} LogInAction={LogInAction} /> },
+            { path: '/', element: <Home /> },
+            { path: '/employees', element: <Home /> },
             { path: '/new', element: <Form /> },
             { path: '/about', element: <About /> },
             { path: "/profile/:id", element: <SinglePage /> }

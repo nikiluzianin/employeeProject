@@ -1,6 +1,6 @@
 import styles from "./Button.module.css"
 
-function Button({ onClick, type = "default", text, role = "primary" }) {
+function Button({ onClick, type = "default", text, role = "primary", isButtonDisabled = false, id }) {
 
     const fullClassName = "btn";
 
@@ -12,7 +12,7 @@ function Button({ onClick, type = "default", text, role = "primary" }) {
 
     return (
         <>
-            <button type={type} className={styles[fullClassName] + " " + styles[role]} onClick={onClick} >{text}</button >
+            <button disabled={isButtonDisabled} type={type} className={styles[fullClassName] + " " + styles[role]} onClick={onClick} id={id} >{text}</button >
         </>
     );
 
