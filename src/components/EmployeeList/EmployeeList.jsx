@@ -3,8 +3,7 @@ import { useState, useEffect, useDebugValue } from 'react'
 import EmployeeCard from '../EmployeeCard/EmployeeCard.jsx'
 import { useNavigate } from 'react-router-dom';
 import useAxiosRequest from '../../services/useAxios.js';
-
-
+import { getDBLink } from '../../services/DBLink.js';
 
 function EmployeeList() {
     const navigate = useNavigate();
@@ -14,7 +13,7 @@ function EmployeeList() {
         isLoading,
         error,
         read,
-    } = useAxiosRequest("http://localhost:3002");
+    } = useAxiosRequest(getDBLink());
 
 
     useEffect(() => {

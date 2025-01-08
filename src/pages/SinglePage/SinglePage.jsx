@@ -3,7 +3,7 @@ import Button from "../../components/Button/Button"
 import { useEffect } from "react";
 import useAxiosRequest from "../../services/useAxios";
 import styles from "./SinglePage.module.css"
-
+import { getDBLink } from "../../services/DBLink";
 
 function SinglePage() {
     const { id } = useParams();
@@ -16,7 +16,7 @@ function SinglePage() {
         isLoading,
         error,
         read,
-    } = useAxiosRequest(`http://localhost:3002`);
+    } = useAxiosRequest(getDBLink());
 
     const startedWorkingDate = (selectedPersonData || []).startDate?.split('T')[0];
     const imageSrc = "https://robohash.org/" + id;

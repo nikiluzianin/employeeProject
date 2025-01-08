@@ -2,7 +2,7 @@ import Button from "../../components/Button/Button";
 import styles from "./Form.module.css"
 import { useState } from "react";
 import useAxiosRequest from "../../services/useAxios";
-
+import { getDBLink } from "../../services/DBLink";
 
 const Form = () => {
     const [newEmployeeData, setNewEmployeeData] = useState({
@@ -21,7 +21,7 @@ const Form = () => {
     const {
         create,
         error
-    } = useAxiosRequest("http://localhost:3002");
+    } = useAxiosRequest(getDBLink());
 
     const handleClick = () => {
         create("personsData", {

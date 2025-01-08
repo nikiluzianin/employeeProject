@@ -5,7 +5,7 @@ import '/birthday-cake.png'
 import Button from '../Button/Button'
 import useAxiosRequest from '../../services/useAxios'
 import useEmployeeStatus from '../../hooks/useEmployeeStatus'
-
+import { getDBLink } from '../../services/DBLink'
 
 function EmployeeCard({ id, name, role, department, location, startDate, onClick }) {
     const [displayStar, setDisplayStar] = useState(false);
@@ -36,7 +36,7 @@ function EmployeeCard({ id, name, role, department, location, startDate, onClick
     const {
         error,
         update
-    } = useAxiosRequest("http://localhost:3002")
+    } = useAxiosRequest(getDBLink());
 
 
     const editHandler = () => {
