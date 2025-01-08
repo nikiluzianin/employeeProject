@@ -29,9 +29,9 @@ The front-end is on Netlify and can be found here [https://lighthearted-kangaroo
 
 The back-end is quite tricky, if not taking into account re-writing the server fully. Basically, the possibility  is either free and quite limited or paid. 
 
-I have tried using such services, as Heroku, [https://my-json-server.typicode.com](https://json-server-49w5.onrender.com) and ended up working with Render[https://json-server-49w5.onrender.com](https://json-server-49w5.onrender.com). However, by the time this is checked, the server is likely to be down, so I suggest the method below (I will leave axios with the original localhost address). 
+I have tried using such services, as Heroku, [https://my-json-server.typicode.com](https://json-server-49w5.onrender.com) and ended up working with Render[https://json-server-49w5.onrender.com](https://json-server-49w5.onrender.com).However, by the time this is checked, the server is likely to be down, so there is a backup option below. 
+Currently, the server is at https://json-server-49w5.onrender.com, and it is used in the code. If it stops working, you can just get my code from Git https://github.com/nikiluzianin/employeeProject, run the server on local machine using "npm run server". In order for the HR App to start working with local, in the file DBLink.js comment the first DBLINK and uncomment the second one – it will start using localhost server.
 
-So the simpliest way is just to run my server here via command "npm run server".
 
 ## Future Improvements
 
